@@ -1,0 +1,13 @@
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.taskset {
+  width: 400px;
+}
+
+#tasktable {
+    width: 900px;
+    margin-left: 20%;
+}

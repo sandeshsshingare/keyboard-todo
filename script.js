@@ -1,7 +1,7 @@
 var test1 = document.getElementById("test");
 var parsing = JSON.parse(localStorage.getItem("taskArr"));
 var taskArr = parsing;
-var taskArr = [];
+var taskArr = JSON.parse(localStorage.getItem("taskArr")) || [];
 
 show();
 
@@ -26,14 +26,14 @@ function clearinput() {
 
 function show() {
   var tasktable1 = document.getElementById("tasktable");
-  if (taskArr.length > 0 ) {
+  if (taskArr.length > 0) {
     tasktable1.innerHTML = `
-    <tr>
+    <tr style="background-color: black; color: white;">
     <th>Sr no.</td>
     
-    <th>Task List</th>
+    <th class = "taskset">Task List</th>
     
-
+    
     
       <th>Edit task</th>
       
@@ -51,7 +51,7 @@ function show() {
         ${i + 1}
         </td>
 
-        <td>
+        <td class = "taskset">
         ${taskArr[i]}
         
         <td>
