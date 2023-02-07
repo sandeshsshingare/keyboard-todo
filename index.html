@@ -32,6 +32,7 @@
             type="text"
             id="inputtask"
             placeholder="input your task here......."
+             onkeydown="key()"
           />
         </div>
       </div>
@@ -70,7 +71,7 @@
 
       <div class="row">
         <div class="col">
-          <table id="tasktable" class="table"></table>
+          <table id="tasktable" class="table mx-5"></table>
         </div>
       </div>
     </div>
@@ -93,6 +94,7 @@
               id="edittext"
               class="form-control my-3"
               placeholder="Edit your task here......."
+             
             /> 
       </div>
       <div class="modal-footer">

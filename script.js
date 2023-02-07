@@ -17,6 +17,13 @@ function pushElement() {
   }
 }
 
+function key() {
+  if (event.keyCode == 13) {
+    pushElement();
+  }
+ 
+}
+
 function clearinput() {
   var getinput = document.getElementById("inputtask");
   if ((getinput.value = "")) {
@@ -38,6 +45,8 @@ function show() {
       <th>Edit task</th>
       
       <th>Delete task</th>
+
+      <th>Mark as Done</th>
       </tr>
       
       `;
@@ -62,8 +71,14 @@ function show() {
         </td>
         
         <td>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="deleteTask(${i})">
+                <button type="button" class="btn btn-outline-danger " data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="deleteTask(${i})">
                   Delete
+                  </button>
+                  </td>
+
+                   <td>
+                <button type="button" class="btn btn-outline-danger " id = "done"  onclick="markDone(${i})">
+                  Done
                   </button>
                   </td>
                   
@@ -74,6 +89,27 @@ function show() {
   } else {
     tasktable1.innerHTML = taskArr;
   }
+}
+//mark done fn
+function markDone(i) {
+  var done1 = taskArr[i];
+  var r = done1;
+  var doneb = r.split("");
+  //console.log(doneb);
+  let f = 0;
+  for (let j = 0; j < doneb.length; j++) {
+    if (doneb[j] == "✅") {
+      f = 1;
+      break;
+    }
+  }
+
+  if (f === 0) {
+    r = "✅" + done1;
+    taskArr[i] = r;
+    localStorage.setItem("taskArr", JSON.stringify(taskArr));
+  }
+  show();
 }
 
 function deleteAll() {
