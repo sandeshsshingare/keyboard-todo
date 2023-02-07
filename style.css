@@ -3,12 +3,9 @@ table {
   word-wrap: break-word;
 }
 
-.taskset {
-  width: 400px;
-}
-
-#tasktable {
-    width: 900px;
-    margin-left: 20%;
-    margin-right : 20%;
+/* td {border: 1px #DDD solid; padding: 5px; cursor: pointer;} */
+.colorrow {
+  background-color: rgb(18, 236, 217);
+  color: #010201e9;
+  
 }
