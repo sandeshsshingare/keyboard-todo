@@ -177,11 +177,9 @@ document.onkeydown = function (e) {
   if ((e.ctrlKey = true && e.key == "s")) {
     e.preventDefault();
     pushElement();
-  }
-  else if ((e.ctrlKey = true && e.key == "d")) {
+  } else if ((e.ctrlKey = true && e.key == "d")) {
     e.preventDefault();
     yesDelete();
-    //alert("helo");
+    alert("helo");
   }
-
 };
